@@ -1,0 +1,49 @@
+<div>
+  Today's date : - {{presentDate | date}}
+
+  This is a short date : - {{presentDate | date: 'shortDate'}} <br>
+  This line shows the full date : - {{presentDate | date: 'fullDate'}} <br>
+  This will show a formatted date: - {{presentDate | date: 'M/dd/yyyy'}} <br>
+  This indicates the hours and minutes: {{presentDate | date: 'h:mm'}} <br>
+  Christine Jasline Natividad
+</div>
+
+<h2>Chained pipes</h2>
+<div>
+  Date with uppercase : - {{presentDate | date: 'fullDate' | uppercase}} <br>
+  Date with lowercase :- {{presentDate | date: 'medium' | lowercase}} <br>
+</div>
+
+<h2>Built-in pipes</h2>
+<h3>AsyncPipe</h3>
+<div>
+  Seconds changing in Time: {{time$ | async | date: 'mediumTime'}}
+</div>
+
+<h2>Json Pipes!</h2>
+<p>Object: {{testObject}}</p>
+<p>Object with JsonPipe: {{testObject | json}}</p>
+
+<h3>Currency Pipe</h3>
+<p> {{price | currency:'':true }}</p>
+<p>{{price | currency: 'INR'}}</p>
+
+<div>
+  <h3>Start index: - {{Fruits | slice:2}}</h3>
+  <h4>Start and end index:- {{Fruits |slice:1:4}}</h4>
+  <h5>Negative index:- {{Fruits | slice:-2}}</h5>
+  <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6>
+</div>
+
+<div style="text-align: center;">
+  <h3>Decimal Pipe</h3>
+  <p>{{decimalNum1 | number}}</p>
+  <p>{{decimalNum2 | number}}</p>
+</div>
+
+template:
+<div style="text-align: center;">
+  <p>Apply formatting: {{decimalNum1 | number: '3.1'}}</p>
+  <p>Apply formatting: {{decimalNum2 | number: '2.1-4'}}</p>
+</div>
+<router-outlet />
